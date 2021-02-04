@@ -1,1 +1,9 @@
-# filter
+我先讀左右聲道分開放,做一個sine跟cosine的table,讓後面直接用找的,加速程式運算
+
+window type我用hannig,接著對每一個frame做計算然後把重疊的部分疊加起來,輸出成一個矩陣
+
+計算方式為對一個frame先做taking window,然後DFT,在頻域用LPF濾掉高頻,再IDFT轉回時域
+
+用輸出的矩陣濾掉小於100Hz的雜訊,一段一段跟雜訊相減即可
+
+最後輸出成音檔
